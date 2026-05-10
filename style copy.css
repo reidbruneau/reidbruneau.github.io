@@ -1,0 +1,195 @@
+body {
+      font-family: Georgia, serif;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      background: #1a1a1a;
+      color: #e8e8e8;
+      line-height: 1.6;
+}
+
+nav {
+    border-bottom: 2px solid #555;
+    padding-bottom: 0.75rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+nav h1 { font-size: 1.1rem; font-weight: bold; color: #f0f0f0; }
+
+nav ul { list-style: none; display: flex; gap: 1.5rem; padding: 0; margin: 0; }
+
+nav a {
+    text-decoration: none;
+    color: #999;
+    font-family: sans-serif;
+    font-size: 0.85rem;
+}
+
+nav a:hover, nav a.active { color: #e8e8e8; text-decoration: underline; }
+
+.page { display: none; }
+.page.active { display: block; }
+
+.page-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #3a3a3a;
+    padding-bottom: 1.5rem;
+}
+
+.page-header h2 { font-size: 1.9rem; margin-bottom: 0.4rem; color: #f0f0f0; }
+
+.page-header p { color: #aaa; font-size: 0.95rem; max-width: 620px; }
+
+.stats-row { display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+
+.stat { border-left: 3px solid #777; padding-left: 0.75rem; }
+
+.stat-value { font-size: 1.5rem; font-weight: bold; display: block; color: #f0f0f0; }
+
+.stat-label {
+    font-family: sans-serif;
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.callouts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.callout {
+    background: #252525;
+    border: 1px solid #3a3a3a;
+    padding: 1rem 1.1rem;
+    font-family: sans-serif;
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+.callout strong { display: block; font-size: 1.4rem; margin-bottom: 0.3rem; font-family: Georgia, serif; color: #f0f0f0; }
+
+.callout-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #777;
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+.section { margin-bottom: 3rem; }
+
+.section h3 {
+    font-size: 1.1rem;
+    border-bottom: 1px solid #3a3a3a;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #ccc;
+}
+
+.chart-block { margin-bottom: 2rem; }
+
+.chart-block img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #3a3a3a;
+    cursor: zoom-in;
+}
+
+.chart-caption { font-family: sans-serif; font-size: 0.8rem; color: #888; margin-top: 0.5rem; line-height: 1.5; }
+
+.chart-caption strong { color: #bbb; display: block; margin-bottom: 0.15rem; }
+
+.chart-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox img { max-width: 95vw; max-height: 92vh; object-fit: contain; border: 1px solid #555; }
+
+.lightbox-close {
+    position: fixed;
+    top: 1rem; right: 1.2rem;
+    color: #ccc;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    background: #333;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid #555;
+}
+
+footer {
+    margin-top: 3rem;
+    border-top: 1px solid #3a3a3a;
+    padding-top: 1rem;
+    font-family: sans-serif;
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.team-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem 3rem;
+      margin-bottom: 3.5rem;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.headshot-wrap {
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    margin-bottom: 1.1rem;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.headshot-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.member-name {
+    font-size: 1.15rem;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    margin-bottom: 0.2rem;
+}
+
+@media (max-width: 640px) {
+    .callouts, .chart-grid-2 { grid-template-columns: 1fr; }
+    .stats-row { gap: 1.2rem; }
+}

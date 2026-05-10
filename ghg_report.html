@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>Overview</title>
+</head>
+<body>
+
+<nav>
+  <h1>DATA 303 - Climate Change and Pollution</h1>
+  <ul>
+    <li><a href="#" class="active">Overview</a></li>
+    <li><a href="deep_dive.html" >Deep Dive</a></li>
+    <li><a href="team.html" >Meet the Team</a></li>
+  </ul>
+</nav>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-close">ESC to close</div>
+  <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()" />
+</div>
+
+<div class="page active" id="p1">
+
+  <div class="page-header">
+    <h2>Overview</h2>
+    <p>For this project we chose to look at how greenhouse gas emissions may be affecting our climate. Specifically, we wanted to visualize the increase in GHG emissions during recent years, and put this in context with the increase of severe weather patterns that are also
+      becoming increasingly common. We hope you enjoy!
+    </p>
+  </div>
+
+  <div class="section">
+    <h3>Regional Trend (2010-2024)</h3>
+    <div class="chart-block">
+      <img src="01_ghg_trend_by_region.png" alt="GHG trend by region" onclick="openLightbox(this.src)" />
+      <p>
+        From this chart you can see that there has been a global increase in GHG emissions from 2010-2024.
+        What is also interesting, is there is a singificant global dip during Covid-19 Pandemic. This is largely because factories and other large emitters of GHG were closed or slowed during this time.
+        This emphasizes that this increased is largely due to human factors, the impacts of these factors are not fully known yet, but
+        we can see later that weather events have been increasing recently too.
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Advanced vs. Emerging Economies</h3>
+    <div class="chart-block">
+      <img src="04_advanced_vs_emerging.png" alt="Advanced vs Emerging economies" onclick="openLightbox(this.src)" />
+      <p class="chart-caption">
+      <p>
+        This visualization is interesting becuse it shows a trend that many people are not aware of with GHG emissions. On an indexed basis, you can see
+        that GHG for developed countries are decreasing slowly. This reflects actions and investments around sustainable and renewable power generation.
+        On the other side, developing countries, which are less advanced, are increasing GHG emissions, because they do not have the technology yet to rely on sustainable power
+      </p>
+    </div>
+  </div>
+
+  <footer>
+  
+  </footer>
+</div>
+
+<script>
+
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+</body>
+</html>
